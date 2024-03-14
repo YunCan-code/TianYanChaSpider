@@ -84,88 +84,6 @@ current_windows = driver.window_handles
 # 2. 根据标签页句柄列表索引下标进行切换
 driver.switch_to.window(current_windows[1])
 
-# 旧版本行业及地区选择
-# def old_choice():
-#
-#     # 选择行业
-#     # driver.refresh()
-#     time.sleep(5)
-#     hy_choice = driver.find_element(By.XPATH, '//*[@id="cascader_category"]/span/span[1]')
-#     driver.execute_script("arguments[0].click();", hy_choice)
-#     time.sleep(random.uniform(0.1, 3.2))
-#
-#     # 由于最多显示250页，即5000条数据，因此需要将筛选条件进行细分，最后将结果进行整合，数量可能会存在些许偏差
-#     # 信息传输 软件和信息技术服务业
-#
-#     # 点击文字而非按钮
-#     xxcs_choice = driver.find_element(By.XPATH,'//*[@id="cascader_category"]/div/div[1]/div[1]/ul/li[9]/span')
-#     driver.execute_script("arguments[0].click();", xxcs_choice)
-#
-#     # # 电信 互联网
-#     # dx = driver.find_element(By.XPATH,'//*[@id="cascader_category"]/div/div[1]/div[2]/ul/li[1]/label/span')
-#     # driver.execute_script("arguments[0].click();", dx)
-#     # hlw = driver.find_element(By.XPATH,'//*[@id="cascader_category"]/div/div[1]/div[2]/ul/li[2]/label/span')
-#     # driver.execute_script("arguments[0].click();", hlw)
-#
-#     # 软件
-#     rj = driver.find_element(By.XPATH,'//*[@id="cascader_category"]/div/div[1]/div[2]/ul/li[3]/label/span')
-#     driver.execute_script("arguments[0].click();", rj)
-#
-#     # 全选-超过5000爬取不全
-#     # xxcs_choice = driver.find_element(By.XPATH, '//*[@id="cascader_category"]/div/div[1]/div[1]/ul/li[9]/label')
-#     # driver.execute_script("arguments[0].click();", xxcs_choice)
-#     time.sleep(random.uniform(0.1, 3.2))
-#     # 行业确定
-#     driver.find_element(By.XPATH, '//*[@id="cascader_category"]/div/div[2]/div/div[2]').click()
-#     time.sleep(random.uniform(0.1, 3.2))
-#
-#
-#     # 地区选择
-#     driver.find_element(By.XPATH, '//*[@id="cascader_area"]/span/span[1]').click()
-#     time.sleep(random.uniform(0.1, 3.2))
-#     # 江苏省
-#     driver.find_element(By.XPATH, '//*[@id="cascader_area"]/div/div[1]/div[1]/ul/li[10]/span').click()
-#     time.sleep(random.uniform(0.1, 3.2))
-#     # 连云港市--全部
-#     # driver.find_element(By.XPATH, '//*[@id="cascader_area"]/div/div[1]/div[2]/ul/li[7]/label/span').click()
-#     # time.sleep(random.uniform(0.1, 3.2))
-#
-#     # 连云港-非全选
-#     lyg = driver.find_element(By.XPATH,'//*[@id="cascader_area"]/div/div[1]/div[2]/ul/li[7]/span')
-#     driver.execute_script("arguments[0].click();", lyg)
-#
-#     # # 连云区
-#     # lyq = driver.find_element(By.XPATH,'//*[@id="cascader_area"]/div/div[1]/div[3]/ul/li[1]/label/span')
-#     # driver.execute_script("arguments[0].click();", lyq)
-#     # # 海州区
-#     # hzq = driver.find_element(By.XPATH,'//*[@id="cascader_area"]/div/div[1]/div[3]/ul/li[2]/label/span')
-#     # driver.execute_script("arguments[0].click();", hzq)
-#     # time.sleep(1)
-#
-#     # 赣榆区
-#     gyq = driver.find_element(By.XPATH,'//*[@id="cascader_area"]/div/div[1]/div[3]/ul/li[3]/label/span')
-#     driver.execute_script("arguments[0].click();", gyq)
-#     # 东海县
-#     dhx = driver.find_element(By.XPATH,'//*[@id="cascader_area"]/div/div[1]/div[3]/ul/li[4]/label/span')
-#     driver.execute_script("arguments[0].click();", dhx)
-#     # 灌云县
-#     gyx = driver.find_element(By.XPATH,'//*[@id="cascader_area"]/div/div[1]/div[3]/ul/li[5]/label/span')
-#     driver.execute_script("arguments[0].click();", gyx)
-#     # 灌南县
-#     gnx = driver.find_element(By.XPATH,'//*[@id="cascader_area"]/div/div[1]/div[3]/ul/li[6]/label/span')
-#     driver.execute_script("arguments[0].click();", gnx)
-#     # 经济技术开发区
-#     jkq = driver.find_element(By.XPATH,'//*[@id="cascader_area"]/div/div[1]/div[3]/ul/li[7]/label/span')
-#     driver.execute_script("arguments[0].click();", jkq)
-#     # 高新技术开发区
-#     qkq = driver.find_element(By.XPATH,'//*[@id="cascader_area"]/div/div[1]/div[3]/ul/li[8]/label/span')
-#     driver.execute_script("arguments[0].click();", qkq)
-#     time.sleep(1)
-#
-#     # 地区确定
-#     driver.find_element(By.XPATH, '//*[@id="cascader_area"]/div/div[2]/div/div[2]').click()
-#     time.sleep(random.uniform(0.1, 3.2))
-
 # 新版本行业地区选择
 # 行业及代码
 print("请提前确定好行业与地区的搭配，确保其搭配的数据量小于5000条")
@@ -703,13 +621,6 @@ for i in range(start_page, ye_nums_int + 1):  # 哪里报错就从那一页重�
                             print('-', zs_item)
                             item.append(zs_item)
 
-                            # item_copy = item
-                            # with open(csv_file, mode='a+', newline='', encoding='utf-8-sig') as file:
-                            #     writer = csv.writer(file, delimiter=',')
-                            #     for i in zs_item:
-                            #         item_copy.append(i)
-                            #         writer.writerow(item_copy)
-
                             # 关闭该证书详情页
                             driver.find_element(By.XPATH,
                                                 '//*[@id="J_Modal_Container"]/div/div/div[2]/div/div[2]/button/span/i').click()
@@ -770,13 +681,6 @@ for i in range(start_page, ye_nums_int + 1):  # 哪里报错就从那一页重�
                         # 遍历了一个详情页后输出内容
                         print('-', zs_item)
                         item.append(zs_item)
-
-                        # item_copy = item
-                        # with open(csv_file, mode='a+', newline='', encoding='utf-8-sig') as file:
-                        #     writer = csv.writer(file, delimiter=',')
-                        #     for i in zs_item:
-                        #         item_copy.append(i)
-                        #         writer.writerow(item_copy)
 
                         # 关闭该证书详情页
                         driver.find_element(By.XPATH,
