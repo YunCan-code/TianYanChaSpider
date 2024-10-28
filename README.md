@@ -1,4 +1,4 @@
-# TianYanChaSpider
+# TianYanChaSpider（失效）
 
 代码已经失效，推荐使用接口进行爬取
 
