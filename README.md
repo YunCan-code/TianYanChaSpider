@@ -1,5 +1,7 @@
 # TianYanChaSpider
 
+代码已经失效，推荐使用接口进行爬取
+
 > 利用 Python selenium 对天眼查进行爬虫
 > 帮同事写的，要求不高，出数据就行
 
